@@ -1,0 +1,68 @@
+<div id="message_nav">
+  <a href="#" id="back_to_inbox">Back to inbox</a>
+  <p class="right"><a>Previous</a> | <a>Next</a></p>
+</div>
+<script>update_unread_count("<%=@mailbox.id %>", "<%=@unread_count %>");</script> 
+<div id='thread_container'>
+  <form method="post" class="thread_tools">
+    <span class="on_off right">
+      <input type="checkbox" checked="checked" id="on_off" />
+    </span>
+    <label for="status_menu">Status:</label>
+    <select id="status_menu">
+      <%=ticket_statuses_select(@ticket.status) %>
+    </select>
+    <label for="assign_menu">Assigned to:</label>
+    <select id="assign_menu">
+      <option value="0">No one</option>
+      <%=get_users(@ticket.assigned_to_id)-%>
+    </select>
+  </form>
+  <div id="thread_status">
+    Subject: <strong><%=@subject -%></strong> () 
+    <span class="right">
+      <span class="light">
+	<%=@mails_length %> message<%="s" if @mails_length>1%> & <%="<span id='no_of_notes'>#{@notes_length}</span>"-%> note<%="s" if @notes_length==1%> 
+	in this conversation | 
+      </span>
+      <a onclick="$('#add_note_form').toggle()"><strong>Add a note</strong></a>
+    </span>
+  </div>
+  <form id="add_note_form" class="add_thread_note" style="display:none;">
+    <div id="note_errors" style="display:none" />
+    <textarea id="note_body"/>
+    <input type="submit" value="Add this note to conversation"/> 
+    <span class="light">Notes will not be sent as email to customers</span>
+  </form>
+
+  <div id="thread" class="thread">
+    <input type="hidden" name="ticket_id" value="<%=@ticket.id -%>">
+    <%@thread_objects.each{|obj|-%>
+    <div class="message incoming" id="<%=obj.id-%>">
+      <div class="payload">
+	<p class="message_header">
+	  <%if obj.class==Mail%>	  
+	  <%="#{obj.froms.first.person.name} (#{obj.froms.first.person.email})" if obj.froms -%>	  
+	  <%else%>
+	  <%=obj.user.username if obj.user -%>
+	  <%end%>
+	  <span class="right"><%=obj.date.strftime("%b %d, %Y | %I:%M %p") -%></span>
+	</p>
+	<p>
+	  <%=obj.class==Mail ? obj.find_raw.body.gsub(/\n/,"<br/>") : obj.note-%>
+	</p>
+      </div>
+    </div>
+    <%}-%>
+  </div>
+</div>
+<div id="thread_meta">
+  <h3>Conversation with</h3>
+  <h3>Tags</h3>
+  <%remote_form_for(:tag, :url => {:controller => "tags", :action => "create"}, :update => "thread_tags", :success => "$('#tag_name').val(''); $('#tag_name').focus()") do |f| %>
+  <%=text_field_with_auto_complete :tag, :name, {:size => ""}, {:url => "tags/auto_complete_for_tag_name", :min_chars => 3} %>
+  <%=f.hidden_field :ticket_id, :value => @ticket.id -%>
+  <%=f.submit("Add tag")-%>
+  <%end%>
+  <%=render :partial => "tags/list" %>
+</div>

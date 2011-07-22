@@ -1,0 +1,12 @@
+<h1>Editing client</h1>
+
+<% form_for(@client) do |client_form| %>
+  <%= client_form.error_messages %>
+  <%= render :partial => 'form', :locals => {:client_form => client_form} %>
+  <p>
+    <%= client_form.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @client %> |
+<%= link_to 'Back', clients_path %>

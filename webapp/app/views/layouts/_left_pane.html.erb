@@ -1,0 +1,56 @@
+<h2>Conversations</h2>
+<ul id="local_nav">
+  <li class="active" id="mailboxes_all">
+    <a href="#"><img src="/images/indicators/disclosure_down_active.png" class="disclosure"/></a>
+    <a href="#" id="all">Inbox</a>
+  </li>
+  <ul class="local_nav_sub">
+    <%@client.mailboxes.each{|mailbox|-%>
+    <li id="mailboxes_<%=mailbox.id-%>">
+      <a href="#" id="<%=mailbox.id -%>"><%=mailbox.name-%></a>
+      <span class="counter" id="unread_count_<%=mailbox.id-%>"><%=mailbox.unread_count -%></span>
+    </li>
+    <%}-%>
+  </ul>
+  <li class="no_disclosure" id="mailboxes_assigned">
+    <%=link_to_remote("Assigned to me<span class='counter'>#{@assigned_count}",:url => assigned_path, 
+    :html => {:id => "assigned", :class => "local_icon", :href => "#"},
+    :loaded => "selectLeftBar('mailbox_assigned'); attachMailClickEvents(); attachMailStatusToggleEvent();", 
+    :update => :message_list, :method => :get)%>
+  </li>
+  <li>
+    <a ><img src="/images/indicators/disclosure_right.png" class="disclosure"/></a>
+    <a href="#" id="drafts" class="local_icon" >Drafts</a>
+  </li>
+  <li id="mailboxes_closed">
+    <a ><img src="/images/indicators/disclosure_right.png" class="disclosure"/></a>
+    <%=link_to_remote("Closed",:url => closed_path, 
+    :html => {:href => "#", :id => "closed", :class => "local_icon"},
+    :loaded => "selectLeftBar('mailbox_closed'); attachMailClickEvents(); attachMailStatusToggleEvent();", 
+    :update => :message_list, :method => :get)%>
+  </li>
+  <li>
+    <a ><img src="/images/indicators/disclosure_right.png" class="disclosure"/></a>
+    <a href="#" id="saved" class="local_icon" >Saved replies</a>
+  </li>
+  <li id="mailboxes_junked" class="no_disclosure">
+    <a href="#" id="junk" class="local_icon" >Junk</a>
+  </li>
+  <li id="mailboxes_trashed">
+    <a><img src="/images/indicators/disclosure_right.png" class="disclosure"/></a>
+    <a href="#" id="trash_full" class="local_icon">Trash</a>
+  </li>
+  <ul style="display: none" id="mailbox_trash_list" class="local_nav_sub">
+    <%@client.mailboxes.each{|mailbox|-%>
+    <li id="mailboxes_trashed_<%=mailbox.id-%>">
+      <a href="#" id="<%=mailbox.id -%>"><%=mailbox.name-%></a>
+    </li>
+    <%}-%>
+  </ul>
+</ul>
+<div class="hud">
+  <h2>Average response time</h2>
+  <h3><sup></sup></h3>
+  <h2>Open issues</h2>
+  <h3></h3>
+</div>

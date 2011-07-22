@@ -1,0 +1,6 @@
+mails_store/
+prototype
+*.log
+*~
+.svn
+*.svn

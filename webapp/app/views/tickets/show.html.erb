@@ -1,0 +1,28 @@
+<p>
+  <b>Start mail:</b>
+  <%=h @ticket.start_mail_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @ticket.name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @ticket.status %>
+</p>
+
+<p>
+  <b>Assigned to:</b>
+  <%=h @ticket.assigned_to_id %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%=h @ticket.client_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>

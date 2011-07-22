@@ -1,0 +1,21 @@
+.noticeExplanation{
+    border: 2px solid lightgreen;
+    width: 95%;
+    background-color: lightgreen;
+    padding: 5px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+}
+div.autocomplete{
+    visibility: visible;
+    position: absolute;
+    width: 255px;
+    background: #FFFFBB none repeat scroll 0 0;
+    padding: 0.5em;
+}
+div.autocomplete ul{
+    padding: 0.5em;
+}
+div.autocomplete ul li{
+    padding: 0.5em;
+}

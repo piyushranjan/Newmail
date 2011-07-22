@@ -1,0 +1,31 @@
+<h1>New ticket</h1>
+
+<% form_for(@ticket) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :start_mail_id %><br />
+    <%= f.text_field :start_mail_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </p>
+  <p>
+    <%= f.label :assigned_to_id %><br />
+    <%= f.text_field :assigned_to_id %>
+  </p>
+  <p>
+    <%= f.label :client_id %><br />
+    <%= f.text_field :client_id %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', tickets_path %>

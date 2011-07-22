@@ -1,0 +1,60 @@
+1:
+  created_at: 2009-09-09 23:27:05 +05:30
+  updated_at: 2009-09-09 23:27:05 +05:30
+  username: admin
+  role_id: 1
+  id: 1
+  client_id: 1
+  person_id: 1
+  status: 1
+  password_hash: 33ec2b14cbc9d1a8d5783bb0adf5183c0870f4ae
+2:
+  created_at: 2009-09-09 23:27:05 +05:30
+  updated_at: 2009-09-09 23:27:05 +05:30
+  username: hrush
+  role_id: 1
+  id: 2
+  client_id: 2
+  person_id: 2
+  status: 1
+  password_hash: c7224da9255daa590c314aab93e4bbcbcf333079
+3:
+  created_at: 2009-09-09 23:27:05 +05:30
+  updated_at: 2009-09-09 23:27:05 +05:30
+  username: piyush
+  role_id: 1
+  id: 3
+  client_id: 1
+  person_id: 28
+  status: 1
+  password_hash: 33ec2b14cbc9d1a8d5783bb0adf5183c0870f4ae
+4:
+  created_at: 2009-09-09 23:27:05 +05:30
+  updated_at: 2009-09-09 23:27:05 +05:30
+  username: anurag
+  role_id: 1
+  id: 4
+  client_id: 1
+  person_id: 15
+  status: 1
+  password_hash: 33ec2b14cbc9d1a8d5783bb0adf5183c0870f4ae
+5:
+  created_at: 2009-09-09 23:27:05 +05:30
+  updated_at: 2009-09-09 23:27:05 +05:30
+  username: piyush cleartrip
+  role_id: 1
+  id: 5
+  client_id: 1
+  person_id: 14
+  status: 1
+  password_hash: 33ec2b14cbc9d1a8d5783bb0adf5183c0870f4ae
+6:
+  created_at: 2009-09-09 23:27:05 +05:30
+  updated_at: 2009-09-09 23:27:05 +05:30
+  username: hrush
+  role_id: 1
+  id: 6
+  client_id: 1
+  person_id: 2
+  status: 1
+  password_hash: 33ec2b14cbc9d1a8d5783bb0adf5183c0870f4ae

@@ -1,0 +1,28 @@
+<p>
+  <b>Parent:</b>
+  <%=h @note.parent_id %>
+</p>
+
+<p>
+  <b>Parent type:</b>
+  <%=h @note.parent_type %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%=h @note.note %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @note.user_id %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%=h @note.client_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>

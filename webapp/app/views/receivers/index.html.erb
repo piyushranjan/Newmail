@@ -1,0 +1,22 @@
+<h1>Listing receivers</h1>
+
+<table>
+  <tr>
+    <th>Mail</th>
+    <th>Receiver type</th>
+  </tr>
+
+<% @receivers.each do |receiver| %>
+  <tr>
+    <td><%=h receiver.mail_id %></td>
+    <td><%=h receiver.receiver_type_id %></td>
+    <td><%= link_to 'Show', receiver %></td>
+    <td><%= link_to 'Edit', edit_receiver_path(receiver) %></td>
+    <td><%= link_to 'Destroy', receiver, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New receiver', new_receiver_path %>

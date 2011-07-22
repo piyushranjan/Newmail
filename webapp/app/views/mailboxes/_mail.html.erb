@@ -1,0 +1,35 @@
+<table cellspacing="0" cellpadding="0" border="0" id="message_list">
+  <colgroup span="3" class="message_controls"/>
+  <colgroup class="from"><col/></colgroup>
+  <colgroup class="subject"><col/></colgroup>
+  <colgroup class="date"><col/></colgroup>
+  <colgroup class="status"><col/></colgroup>
+  <colgroup class="message_actions"><col/></colgroup>
+  <thead>
+    <tr>
+      <th scope="col"/>
+      <th scope="col"/>
+      <th scope="col"/>
+      <th scope="col">From</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Date</th>
+      <th scope="col">Status</th>
+      <th scope="col"/>
+    </tr>
+  </thead>
+  <tbody>
+    <%=render :partial => "mails/mail_trs"-%>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="8">
+	<span id="pagination_status">
+	  <%="Showing #{(getStartPage(params[:page])-1)*PER_PAGE + 1} to #{(getStartPage(params[:page]))*PER_PAGE}"%> of <%=@total %> conversations
+	</span>
+	<ul class="pagination">
+	  <%= getPaginationLinks(params[:page], @total/PER_PAGE) %>
+	</ul>
+      </td>
+    </tr>
+  </tfoot>
+</table>

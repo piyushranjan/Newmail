@@ -1,0 +1,26 @@
+<h1>Listing clients</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Password hash</th>
+    <th>Company</th>
+    <th>Subdomain</th>
+  </tr>
+
+<% @clients.each do |client| %>
+  <tr>
+    <td><%=h client.username %></td>
+    <td><%=h client.password_hash %></td>
+    <td><%=h client.company_id %></td>
+    <td><%=h client.subdomain %></td>
+    <td><%= link_to 'Show', client %></td>
+    <td><%= link_to 'Edit', edit_client_path(client) %></td>
+    <td><%= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New client', new_client_path %>

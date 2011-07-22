@@ -1,0 +1,13 @@
+<p>
+  <b>Mail:</b>
+  <%=h @receiver.mail_id %>
+</p>
+
+<p>
+  <b>Receiver type:</b>
+  <%=h @receiver.receiver_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_receiver_path(@receiver) %> |
+<%= link_to 'Back', receivers_path %>

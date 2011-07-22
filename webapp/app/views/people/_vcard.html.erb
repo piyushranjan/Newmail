@@ -1,0 +1,80 @@
+<div class="vcard">
+  <img class="photo" src="/images/contacts/stuart.jpg">
+  <h2 class="fn"><%=@person.name %></h2>
+  <p class="role"></p>
+  <p class="org"></p>
+  <ul class="inline">
+    <li class="active"><a>History</a></li>
+    <li><a>Contact info</a></li>
+    <li><a>Tags</a></li>
+  </ul>
+  <%if @person.contact_phones %>
+  <dl class="horizontal contact_info_group">
+    <%@person.contact_phones.each{|phone| %>
+    <div class="tel">
+      <dt class="type"><%=CONTACT_TYPES[:phones][phone.type] %></dt>
+      <dd class="value"></dd>
+    </div>
+    <%}%>
+  </dl>
+  <%end%>
+  <dl class="horizontal contact_info_group">
+    <div class="email">
+      <dt class="type">Work</dt>
+      <dd class="value"><%=@person.email %></dd>
+    </div>
+    <%@person.contact_emails.each{|email| %>
+    <div class="email">
+      <dt class="type"><%=CONTACT_TYPES[:emails][email.type] %></dt>
+      <dd class="value"><%=email.email %></dd>
+    </div>    
+    <%}%>
+  </dl>
+  <%unless @person.contact_urls %>
+  <dl class="horizontal contact_info_group">
+    <%@person.contact_urls.each{|url| %>
+    <div>
+      <dt class="type"><%=CONTACT_TYPES[:urls][url.type] %></dt>
+      <dd class="value"><%=url.url %></dd>
+    </div>    
+    <%}%>
+  </dl>
+  <%end%>
+
+  <%unless @person.contact_ims %>
+  <dl class="horizontal contact_info_group">
+    <%@person.contact_ims.each{|im| %>
+    <div>
+      <dt><%=CONTACT_TYPES[:ims][im.type] %></dt>
+      <dd><%=im.url %></dd>
+    </div>    
+    <%}%>
+  </dl>
+  <%end%>
+
+  <%unless @person.contact_addresses %>
+  <dl class="horizontal contact_info_group">
+    <%@person.contact_addresses.each{|address| %>
+    <div class="adr">
+      <dt class="type"><%=CONTACT_TYPES[:adresses][address.type] %></dt>
+      <dd>
+	<span class="street-address"><%=address.street_address %></span><br>
+	<span class="extended-address"><%=address.extended_street_address %></span><br>
+	<span class="locality"><%=address.locality %></span>
+	<span class="postal-code"><%=address.postal_code %></span><br>
+	<span class="region"><%=address.region.name %></span>,
+	<span class="country-name"><%=address.country.name %></span>
+      </dd>
+    </div>
+    <%}%>
+  </dl>
+  <%end%>
+  <%if false%>
+  <dl class="horizontal contact_info_group">
+    <div>
+      <dt>Birthday</dt>
+      <dd class="value"><abbr class="bday" title="1970-02-28"></abbr></dd>
+    </div>
+  </dl>
+  <%end%>
+</div>

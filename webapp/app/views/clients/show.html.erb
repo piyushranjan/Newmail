@@ -1,0 +1,24 @@
+<div class="additional">
+  <h2>Dear <%=h @client.users.first.username %></h2>
+  
+  <p>
+    <b>Your account url is</b>
+    <a href=<%="http://#{@client.subdomain}.newmail.com"-%>><%="#{@client.subdomain}.newmail.com" -%></a>
+  </p><br/>
+  <p>
+    <b>You have following mailboxes configured</b>
+    <%@client.mailboxes.each_with_index{|m, i|-%>
+    <p>
+      <%=i+1-%>. <%=m.name-%> on <%=m.hostname-%> with username: <%=m.username-%>
+    </p>
+    <%}-%>
+  </p>
+  <br/><br/>
+  <p>
+    <%= link_to 'Goto newmail', mailboxes_path() %> |
+    <%= link_to 'Edit', edit_client_path(@client) %> |
+    <%= link_to 'Add mailbox', mailbox_path(:new) %> |
+  </p>
+
+</div>
+

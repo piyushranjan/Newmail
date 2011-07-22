@@ -1,0 +1,29 @@
+    <p>
+      <%= f.label :name_of_this_mailbox %><br />
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :mailbox_email_address %><br />
+      <%= f.text_field :email %>
+    </p>
+
+    <p>
+      <%= f.label :hostname %><br />
+      <%= f.text_field :hostname %> (Server domain name or the ip address)
+    </p>
+
+    <p>
+      <%= f.label :server_type %><br />
+      <%= f.select :server_type, [:imap, :pop] %> 
+    </p>
+
+    <p>
+      <%= f.label :username %><br />
+      <%= f.text_field :username %> (Username to access this account)
+    </p>
+
+    <p>
+      <%= f.label :password %><br />
+      <%= f.password_field :password-%> (Password to access this account)
+    </p>

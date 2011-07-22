@@ -1,0 +1,32 @@
+<%content_for(:toolbar) do-%>
+<form class="search" method="get" action="#">
+  <input type="keyword_search" placeholder="search all contacts..." results="10" autosave="name.newmail.com" value="" id="keyword_search" name="keyword_search"/>
+</form>
+<ul class="inline">
+  <li><a class="cap_left">New contact</a></li>
+  <li><a>Edit selected contact</a></li>
+  <li><a class="cap_right">Delete selected contact</a></li>
+</ul>
+<%end-%>
+
+<%content_for(:contact_list_container) do -%>
+  <%alphabet = "" -%>
+  <% @people.each do |person| %>
+  <%if not person.name[0].chr.downcase==alphabet %>
+  <%alphabet = person.name[0].chr.downcase -%>
+  <p class="alphabet_separator"><%=alphabet %></p>
+  <%end%>
+  <p id="<%=person.id-%>" class="contact_list_item person">
+    <%if person.name.include?(" ") %>
+    <span class="given-name"><%=person.name.split(" ")[0]%></span>
+    <span class="family-name"><%=person.name.split(" ")[-1]%></span>
+    <%else%>
+    <span class="given-name"><%=person.name.split(" ")[0]%></span>
+    <%end%>
+  </p>
+  <% end %>
+<%end-%>
+
+<%content_for(:contact_display) do -%>
+<%= render :partial => "people/vcard" -%>
+<%end-%>

@@ -1,0 +1,487 @@
+/*------------------------------------------------- 
+GLOBAL RESET
+-------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles!
+:focus {
+	outline: 0;
+} */
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*------------------------------------------------- 
+ELEMENTS
+-------------------------------------------------*/html, body {
+	}body {	margin: 0 auto;
+	padding: 0;
+	}
+a {	color:  #0f66be
+	}/*------------------------------------------------- TYPOGRAPHY
+-------------------------------------------------*/
+
+body {
+	color: #000;	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	font-size: 75%;
+	}.light {	color: #999
+	}
+
+/*------------------------------------------------- 
+GENERIC CLASSES
+-------------------------------------------------*/
+.left {	float: left	}
+.right {
+	float: right
+	}.indent {	text-indent: 2em	}
+
+/*------------------------------------------------- 
+REUSABLE DESIGN PATTERNS-------------------------------------------------*/
+
+/* Horizontally paired items definition lists
+-------------------------------------------------*/
+dl.horizontal {
+	margin: 0;
+	}dl.horizontal dt, dl.horizontal dd {	line-height: 1.5em;	}dl.horizontal dt {
+	float: left;
+	white-space: nowrap;	width: 4em;
+	}
+dl.horizontal dd {
+	margin: 0 0 0 5em;
+	}
+
+/*dl.horizontal dt:after {
+	content: ":"	}*/
+/* Inline lists-------------------------------------------------*/ul.inline li {
+	display: inline	}
+/* Pagination-------------------------------------------------*/ul.pagination {
+	}
+ul.pagination li {	display: inline	}ul.pagination li.dots {	font-weight: bold;
+	padding-right: .1em;
+	vertical-align: 30%	}ul.pagination li a {	
+	background: #d7d7d7;		color: #333;	margin-right: .1em;	padding: .2em .3em;	text-decoration: none;	-moz-border-radius: 2px;	-webkit-border-radius: 2px;
+	}
+ul.pagination li a:hover {	background: #f2f2f2	}ul.pagination li a.here {	background: #fff;
+	color: #000;
+	font-weight: bold;
+	}
+/*-------------------------------------------------STRUCTURE-------------------------------------------------*/#wrapper {
+	background-color: #d1d7e2;	margin: 0 auto;	min-width: 980px;	width: 100%;	}
+#header {
+	background: #036;	color: #fff;	display: block;
+	height: 32px;	padding: .5em;	}#left_pane {	float: left;	margin: 0;	width: 200px;	}
+#main_pane {
+	background: #fff;
+	border-left: 1px solid #999;
+	overflow-y: auto;
+	margin-left: 200px;	}
+        
+#footer {
+	clear: both;
+	margin: 0;	}
+/*------------------------------------------------- 
+SIGN IN
+-------------------------------------------------*/div.additional {
+	border: 1px solid #c3c3c3;
+	margin: 100px auto 0;
+	padding: 20px;	width: 430px;	-moz-border-radius: 5px;	-webkit-border-radius: 5px;
+	}
+div.additional h1 {
+	font-size: 1.6em;	margin: 0 0 1em 0	}div.additional h2 {
+	border-top: 1px dashed #c3c3c3;
+	font-size: 1.2em;
+	margin: 0 0 .6em 0;
+	padding-top: 1em
+	}
+
+div.additional p {
+	font-size: 1.2em;
+	line-height: 1.2em
+	}
+div.additional dt {
+	float: left;
+	white-space: nowrap;	width: 8em;
+	}
+div.additional dd {	margin: 0 0 0 8em;
+	}
+div.additional dt, div.additional dd {	line-height: 2em;
+	margin-bottom: 1em
+	}
+div.additional form {	}
+div.additional label, div.additional input {
+	font-size: 1.3em;	}div.additional input#username {
+	width: 300px
+	}div.additional input#password {	margin-right: .5em;
+	width: 170px	}div.additional label.light {	font-size: 1.1em
+	}
+
+div.additional fieldset legend {	font-weight: bold;	margin: 0 0 2em 0;	padding: .4em .6em 1em 0;	width: 96%	}/*------------------------------------------------- HEADER-------------------------------------------------*/
+#header h1 {	float: left;	font-size: 2em;	font-weight: normal;
+	padding-left: .3em;	padding-top: .2em;	}
+
+/* Global Navigation Tabs-------------------------------------------------*/
+p.global_nav {	float: right;
+	font-family: Verdana;	font-size: 85%;
+	}
+
+p.global_nav a {	color: #fff;	
+	padding: .5em;	}p.global_nav a:hover {	background: #fff;	color: #214896	}/* Primary Navigation Tabs-------------------------------------------------*/ul.primary_nav {
+	clear: right;	margin-left: 195px;	padding-top: .8em;
+	}
+ul.primary_nav li {
+	display: inline;	}ul.primary_nav li a {	background: #939dac;
+	color: #fff;	margin: 0 .5em 0 0;
+	padding: .45em 2em;
+	text-decoration: none
+	}
+
+ul.primary_nav li a:hover {	background: #fff;	color: #000
+	}ul.primary_nav li.here a {
+	background: #dfe1e3;	border-bottom: 0;	color: #000;
+	font-weight: bold	}/*------------------------------------------------- LOCAL NAVIGATION
+-------------------------------------------------*/
+
+#left_pane {	}
+#left_pane h2 {
+	color: #505d6d;
+	font-weight: bold;	font-size: 11px;	padding: 1em .5em .5em;	text-shadow: #fff 0 1px 2px;	text-transform: uppercase	}#local_nav {	display: block;
+	line-height: 1.6em;
+	width: 100%
+	}
+#local_nav a {	color: #000;
+	text-decoration: none	}
+
+#local_nav li {	padding: 0 1em 0 .5em;	}
+#local_nav li.active {
+	background: url(../images/stylesheet/bg_local_nav_active.gif) repeat-x;	}
+#local_nav li.active a {
+	color: #fff;	font-weight: bold;	text-shadow: #1b4793 0 1px 2px	}
+
+#local_nav img.disclosure {	vertical-align: -20%;	margin-right: 3px
+	}
+
+#local_nav li.no_disclosure {
+	padding-left: 22px
+	}
+
+.local_nav_sub {
+	text-indent: 3.5em
+	}
+
+/* Nav icons-------------------------------------------------*/
+#local_nav a.local_icon {
+	padding-left: 20px;
+	}
+
+#local_nav a#inbox {
+	background: url(../images/stylesheet/localnav_inbox.png);
+	background-repeat: no-repeat;
+	background-position: 0% 90%
+	}
+#local_nav a#assigned {
+	background: url(../images/stylesheet/localnav_assigned.png);
+	background-repeat: no-repeat;
+	background-position: 0% 90%
+	}
+
+#local_nav a#drafts {
+	background: url(../images/stylesheet/localnav_drafts.png);
+	background-repeat: no-repeat;
+	background-position: 0% 90%
+	}
+#local_nav a#closed {
+	background: url(../images/stylesheet/localnav_closed.png);
+	background-repeat: no-repeat;
+	background-position: 0% 90%
+	}
+#local_nav a#saved {
+	background: url(../images/stylesheet/localnav_saved.png);
+	background-repeat: no-repeat;
+	background-position: 0% 90%
+	}
+
+#local_nav a#junk {
+	background: url(../images/stylesheet/localnav_junk.png);	background-repeat: no-repeat;
+	background-position: 0% 90%
+	}
+#local_nav a#trash_empty {
+	background: url(../images/stylesheet/localnav_trash_empty.png);	background-repeat: no-repeat;	background-position: 0% 90%
+	}
+#local_nav a#trash_full {
+	background: url(../images/stylesheet/localnav_trash_full.png);
+	background-repeat: no-repeat;
+	background-position: 0% 90%	}
+/* Counter
+-------------------------------------------------*/
+#local_nav span.counter {	background: #939dac;	color: #fff;	float: right;	font-size: 70%;
+	font-weight: bold;
+	line-height: 13px;
+	margin-top: 2px;	padding: .2em .7em;	text-shadow: none;	-moz-border-radius: 5px;	-webkit-border-radius: 5px;	}
+
+#local_nav .local_nav_sub span.counter  {
+	text-indent: 0
+	}
+
+#local_nav li.active span.counter {
+	background: #fff;
+	color: #0055af
+	}/* Heads up display
+-------------------------------------------------*/
+.hud {
+	border-top: 1px solid #999;
+	display: block;
+	margin-top: .6em;
+	bottom: 10px;
+	position: absolute;
+	width: 200px
+	}
+.hud h3 {
+	padding: 0 .7em;
+	font-size: 32px;	text-shadow: #fff 0 1px 2px;	}.hud h3 sup {	font-size: 30%;	font-weight: normal;	margin-left: .5em	}/*------------------------------------------------- TOOLBAR & CONTROLS
+-------------------------------------------------*/
+
+/*Toolbar-------------------------------------------------*/div#toolbar {	background: #dfe1e3;
+	border-bottom: 1px solid #bfbfbf;	display: block;	height: 40px;
+	padding: 0 .5em 0 1em	}
+/*Controls-------------------------------------------------*/
+div#toolbar ul.inline {	padding-top: 1.3em	}
+div#toolbar ul.inline a {	background: #fff;
+	color: #000;
+	margin: -.1em;
+	padding: .3em .5em;
+	text-decoration: none
+	}
+
+div#toolbar ul.inline a:hover {	background: #acacac;	}
+div#toolbar ul.inline a.cap_left {	-moz-border-radius-bottomleft: 3px;	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-webkit-border-top-left-radius: 3px;	}
+div#toolbar ul.inline a.cap_right {	margin-right: 1em;	-moz-border-radius-bottomright: 3px;	-webkit-border-bottom-right-radius: 3px;	-moz-border-radius-topright: 3px;	-webkit-border-top-right-radius: 3px;	}.controls {	font-weight: bold;	padding-top: 1em;
+	}
+
+.controls a {	margin-right: 1em
+	}
+/*Search form-------------------------------------------------*/form.search {	float: right;
+	padding-top: .8em
+	}
+
+/*------------------------------------------------- 
+MESSAGE LIST TABLE-------------------------------------------------*/#list_container_2pane, #list_container_3pane {
+	overflow-y: auto;	}
+#list_container_3pane {
+	border-bottom: 1px solid #c3c3c3;	height: 220px;	}
+table#message_list {
+	background: #fff;
+	width: 100%;	}
+
+table#message_list colgroup.message_controls {
+	width: 28px	}table#message_list colgroup.from {
+	}
+
+table#message_list colgroup.subject {
+	}
+table#message_list colgroup.date {	width: 90px
+	}table#message_list colgroup.status {	width: 100px	}table#message_list colgroup.message_actions {
+	width: 60px
+	}
+table#message_list thead tr {
+	background: url(../images/stylesheet/bg_th.gif) repeat-x;	}
+
+table#message_list thead th {
+	border-bottom: 1px solid #bfbfbf;
+	border-right: 1px solid #bfbfbf;	color: #5f5f5f;
+	font-size: 11px;
+	height: 20px;	padding: 0 .5em;
+	text-align: left;
+	vertical-align: middle;	}table#message_list tbody tr {	/*border-top: 1px solid #dfdfdf;*/	border-right: 1px solid #bfbfbf;	font-size: 12px;
+	}
+
+table#message_list tbody tr.stripe {
+	background: #f1f5fa	}table#message_list tbody tr.selected {
+	background: #b4d5fe;
+	}table#message_list tbody tr.unread {
+	font-weight: bold
+	}
+table#message_list tbody tr a {
+	color: #000;	display: block;
+	text-decoration: none	}table#message_list tbody td {
+	padding: .3em .5em 0;	}
+table#message_list tbody td.indicator {
+	vertical-align: middle;
+	text-align: center
+	}
+table#message_list tbody td.indicator img {
+	margin-top: .1em
+	}
+table#message_list .light {	font-weight: normal;	margin-left: .5em;
+	}
+table#message_list tfoot tr {	background: #f3f3f3;
+	border-top: 1px solid #dedede;	color: #666674;
+	font-size: 11px;	}
+table#message_list tfoot td {
+	border-right: 1px solid #bfbfbf;
+	padding: 8px 6px;
+	vertical-align: middle
+	}
+table#message_list tfoot form {	border-right: 1px solid #d7d7d7;	display: inline;	float: right;	margin: 0 1em 0;	padding: 0 1em 0	}table#message_list tfoot form select {	font-size: 9px	}table#message_list tfoot ul.pagination {	float: right	}
+
+table#message_list tfoot ul.pagination a {
+	background: #e8e8e8;
+	border: 1px solid #acacac
+	}
+
+table#message_list tfoot ul.pagination a:hover {
+	background: #fff
+	}
+
+table#message_list tfoot ul.pagination a.here {
+	background: #fff;
+	}/*------------------------------------------------- MESSAGES & THREADS
+-------------------------------------------------*/
+/* Message navigation
+-------------------------------------------------*/
+
+#message_nav {	background: #e8e8e8;
+	border-bottom: 1px solid #acacac;
+	border-top: 1px solid #fff;	padding: .7em;	}#thread_container, #thread_meta {
+	height: 651px;
+	overflow-y: auto	}#thread_container {
+	float: left;	width: 70%;	}.message p {
+	font-size: 13px;
+	margin-bottom: .7em;	}#thread_meta {	background: #f3f3f3;
+	border-left: 1px solid #acacac;	float: right;	width: 30%;	}
+/* Message threading styles-------------------------------------------------*/
+
+#thread_status {
+	border-bottom: 1px solid #e3e3e3;	padding: .5em 1em;
+	}
+#thread {	line-height: 1.3em;	}
+.message {
+	border-bottom: 1px solid #e3e3e3;
+	padding: 1.5em 1em 0;	}.payload {	margin-left: 60px;	padding: .5em;	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	}
+
+.message img.photo {
+	float: left
+	}
+
+/*.incoming  .payload {
+	background: aqua;	}
+
+.outgoing .payload {
+	background: #f2f2f2;	}*/p.message_header {
+	color: #666;	font-size: 11px;	margin-left: -12px;
+	padding-left: 12px;
+	background: url(../images/stylesheet/bg_message_incoming.gif) left no-repeat;	}
+.outgoing p.message_header {	}
+
+p.show_older {
+	margin-top: .5em;	padding: 1em;	text-align: center	}p.show_older a {	background: #44a6ef;
+	border: 3px solid #c3e7fd;	color: #fff;	padding: .5em;	text-decoration: none;	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	}/* vCard elements
+-------------------------------------------------*/
+
+.vcard {}
+.fn {}
+.n {}
+.given-name {}
+.additional-name {}
+.family-name {}
+.nickname.url {}
+.tel {}.email {}.adr {}.street-address {}
+.locality {}.region {}.postal-code {}.country-name {}.type {}
+.bday {}.org {}
+.title {}.photo {}
+.category {}.role {}.note {}/*vCard element styles-------------------------------------------------*/
+
+.vcard {	padding: 1em;
+	}.vcard img.photo {	float: left;	margin-right: .5em
+	}
+.vcard h2 {
+	font-size: 16px;	margin-bottom: .4em
+	}
+
+.vcard p {	margin-bottom: .3em	}
+
+.vcard ul.inline {
+	margin: 1.5em auto;
+	text-align: center	}
+
+.vcard ul.inline li {
+	background: #fff;
+	display: inline;
+	margin: -2px;
+	padding: .4em .7em;
+	}.vcard ul.inline li a {	text-decoration: none;
+	text-shadow: none;
+	}
+.vcard ul.inline li:first-child {
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;	}
+.vcard ul.inline li:last-child {	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;	-moz-border-radius-bottomright: 5px;	-webkit-border-bottom-right-radius: 5px;
+	}.vcard ul.inline li.active {	background: aqua;	}
+dl.contact_info_group {	background: #fff;	border: 1px solid #dbdbdb;	margin: 1em auto;	text-shadow: none;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	}
+dl.contact_info_group div {
+	display: block;	padding: .3em 1em 0;
+	}
+
+.contact_info_group div:last-child {
+	border: 0;	padding-bottom: .1em
+	}
+div.vcard dl.horizontal dt {
+	color: #929292;
+	text-align: right;
+	text-transform: lowercase
+	}
+div.vcard dl.horizontal dd {
+	color: #424242;
+	line-height: 1.5em
+	}

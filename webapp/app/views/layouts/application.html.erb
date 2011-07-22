@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<%= render :partial => 'layouts/header' %>
+<body>
+<div id="wrapper">
+  <div id="header">
+   <%= render :partial => 'layouts/global_nav' %>
+  </div>
+  <div id="left_pane">
+    <%= render :partial => 'layouts/left_pane' %>
+  </div>
+  <%if flash[:error] or flash[:notice]-%><p class="error_message"><%= flash[:notice] %></p><%end-%>  
+  <div id="main_pane">
+    <div id="toolbar">
+      <%= @content_for_toolbar %>
+    </div>
+    <div id="list_container">
+      <%= @content_for_list_container %>
+    </div>
+  </div>
+
+  <div id="footer"/>  
+</body>
+</html>
+<%#= @content_for_right %>

@@ -1,0 +1,16 @@
+<div class="additional">
+  <% form_for(:user, @user, :url => {:action => "login" }) do |f| %>
+  <%if flash and flash[:error]-%>
+  <p class="error"><%= flash[:error]-%></p>
+  <%end-%>
+    <dl>
+      <dt><label for="username">Username</label></dt>
+      <dd><%= f.text_field :username-%></dd>
+      <dt><label for="password">Password</label></dt>
+      <dd><%= f.password_field :password-%><a href="forgot.shtml">I forgot my password</a>
+      </dd>
+      <dd><input type="checkbox" id="remember_me" /><label class="light" for="remember_me">Remember me on this computer</label></dd>
+      <dd><input type="submit" value="Login" /></dd>
+    </dl>
+  <%end-%>
+</div>

@@ -1,0 +1,11 @@
+<div class="message incoming" id="<%=note.id-%>">
+  <div class="payload">
+    <p class="message_header">
+      <%=@note.user.username if @note.user -%>
+      <span class="right"><%=@note.created_at.strftime("%b %d, %Y") -%></span>
+    </p>
+    <p>
+      <%=@note.note %>
+    </p>
+  </div>
+</div>

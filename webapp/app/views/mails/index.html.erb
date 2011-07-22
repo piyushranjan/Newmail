@@ -1,0 +1,3 @@
+<%#= periodically_call_remote(:url => client_mailbox_mails_path(@client, @mailbox), 
+:method => "get",  :frequency => '30', :update => 'message_list')-%>
+<%=render :partial => "mailboxes/mail"-%>

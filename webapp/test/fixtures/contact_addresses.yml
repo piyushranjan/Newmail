@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  person_id: 1
+  address: MyString
+  city_id: 1
+  country_id: 1
+  type: 1
+
+two:
+  person_id: 1
+  address: MyString
+  city_id: 1
+  country_id: 1
+  type: 1

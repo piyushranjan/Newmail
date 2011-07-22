@@ -1,0 +1,6 @@
+tmp/**/*
+doc/api
+doc/app
+config/*.yml
+**.*~
+log/*

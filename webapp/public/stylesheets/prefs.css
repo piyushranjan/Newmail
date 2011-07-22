@@ -1,0 +1,88 @@
+/*------------------------------------------------- 
+SETTINGS HEADER & NAVIGATION-------------------------------------------------*/
+/* Header block-------------------------------------------------*/
+#settings_header {
+	background: #bacde5 url(../images/stylesheet/bg_settings.png) repeat-x;
+	height: 61px;
+	padding: 0 1em
+	}
+#settings_header h1 {	color: #2c4865;
+	float: right;
+	font-size: 17px;	font-weight: bold;	margin-top: 1em;
+	text-shadow: rgba(250, 250, 250, 0.496094) 0px 1px 0px;	}
+/* Navigation
+-------------------------------------------------*/.nav a {	color: #2c4865;
+	font-size: 11px;	font-weight: bold;	text-decoration: none;	text-shadow: rgba(250, 250, 250, 0.496094) 0px 1px 0px;
+	}
+span.selected_left,
+span.selected_right {
+	background: #bacde5;	float: left;	height: 61px;
+	width: 10px;
+	visibility: hidden;
+	}
+span.selected_left {
+	background: url(../images/stylesheet/bg_settings_selected_left.png) no-repeat;
+	}
+span.selected_right {
+	background: url(../images/stylesheet/bg_settings_selected_right.png) no-repeat right;	}
+div.selected_middle {	float: left;	height: 61px;
+	text-align: center	}
+div.selected_middle img {	margin: 1em 0 0 0	}
+div.selected_middle a {	display: block;
+	padding-top: 45px
+	}
+/* Navigation background images-------------------------------------------------*/a#nav_accounts {
+	background: url(../images/preferences/accounts.png) no-repeat center;
+	}
+
+a#nav_general {
+	background: url(../images/preferences/general.png) no-repeat center;	}/* Navigation states for selected item-------------------------------------------------*/
+.selected span.selected_left,.selected span.selected_right {
+	visibility: visible
+	}
+.selected div.selected_middle {	background: #bacde5 url(../images/stylesheet/bg_settings_selected.png) repeat-x;	}
+.selected div.selected_middle a {
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, 0.496094) 0px -1px 0px;	}
+/*------------------------------------------------- PREFERENCES FORM-------------------------------------------------*/
+form {
+	background: #fff;	padding: 1em	}
+
+fieldset fieldset {	border-bottom: 1px solid #f3f3f3;
+	padding: 1em;	}
+legend {
+	color: #666;	float: left;	font-size: 13px;	font-weight: bold;	}
+.field_group {	margin-left: 12em	}
+fieldset h2 {	font-size: 13px;	font-weight: normal	}fieldset h2, fieldset p {	margin-bottom: .5em	}
+fieldset p {	}
+fieldset p label {
+	vertical-align: -15%	}
+fieldset.submit {
+	border-bottom: 0;	border-top: 1 px solid #f3f3f3;
+	text-align: right;	}.radios label {
+	margin-right: .5em	}
+/* Account preferences form-------------------------------------------------*/#account_list {
+	background: #ebf1f3;
+	float: left;	height: 250px;	margin: 0 1em;
+	overflow-y:auto;	width: 140px;
+	}
+#account_list h3 {
+	color: #505d6d;
+	font-weight: bold;
+	font-size: 10px;	padding: 1em .5em .5em;	text-shadow: #fff 0 1px 2px;	text-transform: uppercase	}#account_list ul {
+	font-size: 14px	}
+#account_list ul li a {
+	color: #000;	display: block;	padding: 7px 10px;	text-decoration: none	}#account_list ul li.selected {	background: #7ebcda	}#account_list ul li.selected a {
+	color: #fff;
+	text-shadow: rgb(89, 133, 162) 0px 1px 0px;
+	}#account_list p {	padding: 1em 0;	text-align: center	}
+fieldset#accounts {
+	background: #ececed;
+	display: block;	padding: 1em;	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;	}fieldset#accounts dl.horizontal dt,fieldset#accounts dl.horizontal dd {	line-height: 2.5em	}fieldset#accounts dl.horizontal dt {	text-align: right;
+	width: 15em;
+	}fieldset#accounts dl.horizontal dd {	margin: 0 0 0 16em;	}
+fieldset#accounts input,
+fieldset#accounts select {	}/* Message rules preferences form-------------------------------------------------*/fieldset.ruleset {
+	border: 1px solid #c3c3c3;	width: 70%
+	}

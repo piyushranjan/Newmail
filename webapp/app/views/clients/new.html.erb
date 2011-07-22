@@ -1,0 +1,19 @@
+<div class="additional">
+  <h1>Create your account</h1>
+  <% form_for(@client, {:class => ''}) do |client_form| %>
+  <%if client_form.error_messages -%>
+  <p class="error">
+    <%= client_form.error_messages %>
+  </p>
+  <%end-%>
+  <%= render :partial => 'form', :locals => {:client_form => client_form} %>
+  <fieldset class="submit">
+    <legend><strong>Your web site address</strong></legend>
+    <p>http://NAME.newmail.com</p>
+    <input type="checkbox" name="accept" id="accept" />
+    <label for="accept">I have read and accept the Terms of Use</label>  
+    <%= client_form.submit 'Create my NewMail site' %>
+  </fieldset>
+<% end %>
+<h3> or log in <%=link_to("here", {:controller => "users", :action => "login"}, :title => "Log in to your account")-%> if you already have an account</h3>
+</div>

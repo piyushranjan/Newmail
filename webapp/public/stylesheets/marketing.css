@@ -1,0 +1,138 @@
+/*------------------------------------------------- 
+GLOBAL RESET
+-------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles!
+:focus {
+	outline: 0;
+} */
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*------------------------------------------------- 
+ELEMENTS
+-------------------------------------------------*/
+
+html, body {
+	}
+body {
+	margin: 0 auto;
+	padding: 0;
+	}/*------------------------------------------------- 
+TYPOGRAPHY
+-------------------------------------------------*/
+body {	color: #000;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;	font-size: 75%;	}
+.light {
+	color: #999
+	}
+
+/*------------------------------------------------- 
+REUSABLE DESIGN PATTERNS
+-------------------------------------------------*//* Horizontally paired items definition lists-------------------------------------------------*/
+dl.horizontal {
+	margin: 0;
+	}
+dl.horizontal dt, dl.horizontal dd {
+	line-height: 1.5em;
+	}
+dl.horizontal dt {	float: left;
+	white-space: nowrap;
+	width: 4em;	}dl.horizontal dd {	margin: 0 0 0 5em;	}
+
+/*dl.horizontal dt:after {	content: ":"
+	}*//*-------------------------------------------------STRUCTURE-------------------------------------------------*/
+div.additional {
+	margin: 10px auto 0;
+	padding: 20px;	width: 600px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	}
+/*------------------------------------------------- SIGN UP FORM
+-------------------------------------------------*/form#signup fieldset {
+	border: 1px solid #d5e9fa;	margin-bottom: 1.5em;
+	padding: 1.5em 1em 1.3em 6em;
+	-moz-border-radius: 10px;	-webkit-border-radius: 10px;
+	}fieldset#signup_1 {
+	background: url(../images/stylesheet/signup_1.png) no-repeat;	background-position: 10px 10px
+	}
+
+fieldset#signup_2 {
+	background: url(../images/stylesheet/signup_2.png) no-repeat;
+	background-position: 10px 10px
+	}
+
+fieldset#signup_3 {
+	background: url(../images/stylesheet/signup_3.png) no-repeat;
+	background-position: 10px 10px	}div.additional h1 {
+	font-size: 2.5em;
+	margin: 0 0 .5em 0	}form#signup h2 {
+	font-size: 2em;	font-weight: normal;
+	margin: 0 0 .6em 0;	padding-top: .2em
+	}form#signup p {
+	color: #666;	font-size: 1.1em;	margin-bottom: 1em;
+	line-height: 1.3em
+	}
+form#signup dt {
+	float: left;
+	padding-right: .5em;	white-space: nowrap;	text-align: right;	width: 9em;
+	}
+
+form#signup dd {
+	margin: 0 0 0 9em;
+	}
+form#signup dt, form#signup dd {
+	line-height: 2em;	margin-bottom: 1em
+	}
+
+form#signup dt {	line-height: 2.4em	}
+form#signup label {	font-weight: bold;	}
+form#signup input {
+	font-size: 1.3em;	}fieldset#signup_3 label {	font-weight: normal	}

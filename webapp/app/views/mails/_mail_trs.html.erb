@@ -1,0 +1,19 @@
+<% @tickets.each_with_index do |ticket, idx| %>
+<tr style="cursor: pointer" class="<%='unread' if ticket.mails.last.status==1-%> <%='stripe' if idx%2==0%>" id="<%=ticket.id-%>">
+  <td><input type="checkbox" value=""/></td>
+  <td class="indicator">
+    <%=ticket.mails.last.status==1 ? image_tag("/images/indicators/unread.gif") : image_tag("/images/indicators/unread.gif", :style => "display:none;")-%>
+  </td>
+  <td class="indicator">
+    <%=image_tag("indicators/thread_collapsed.gif") if ticket.mail_tickets_count > 1-%>
+      </td>
+  <td>	
+    <%=writeFroms(ticket)-%>
+    <span class="light"><%="(#{ticket.mail_tickets_count})" if ticket.mail_tickets_count > 1 -%></span>
+  </td>
+  <td><%=truncate(ticket.mails.first.subject, :length => 90)-%></td>
+  <td><%=time_ago_in_words(ticket.mails.last.date) -%></td> 
+  <td><%=(ticket.status==2 and ticket.assigned_to_id==@current_user["id"]) ? "assigned to me" :  TICKET_STATUSES[ticket.status] %></td>
+  <td class="indicator"><a title="Actions"><img title="Actions" src="/images/controls/button_actions.png"/></a></td>
+</tr>
+<% end %>

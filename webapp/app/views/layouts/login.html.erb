@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Nemail - Signup and login</title>
+  <%= stylesheet_link_tag 'styles' %>
+</head>
+<body>
+  <%if flash and flash[:notice]-%><h1 style="color: green"><%= flash[:notice] %></h1><%end-%>
+  <h2 style="float: left; position: absolute; font-size: 20px; right: 100px;">
+    <%if @current_user -%>
+    Logged in as 
+    <%=@current_user["username"] -%> | 
+    <%=link_to("Profile", {:controller => "users", :action => "profile"}, :title => "Review and edit your account information")-%>|
+    <%=link_to("Log out", logout_path, :title => "Log out of your account")-%>|
+    <%else-%>
+
+    <%end-%> 
+  </h2>
+  <%= yield %>
+</body>
+</html>

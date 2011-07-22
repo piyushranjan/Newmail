@@ -1,0 +1,26 @@
+<div id="message_nav">
+  <a id="back_to_inbox">Back to inbox</a>
+</div>
+<% remote_form_for(@mail, :url => {:controller => "mails", :action => "create", :ticket_id => @ticket.id, :replied_to_email => @last_mail.id}, 
+:update => "thread_container",
+:html => {:id => "compose_message"}) do |f| %>
+  <%= f.error_messages %>
+  <dl class="horizontal">
+    <dt><label for="mail_to">To:</label></dt>
+    <dd>
+      <input name="mails[tos]" type="text" class="addressing" id="mail_to" value="<%=@last_mail.froms.collect{|x| x.person.email}.join(',') if @last_mail%>"/>
+    </dd>
+    <dt><label for="">Cc:</label></dt>
+    <dd>
+      <input name="mails[ccs]" type="text" class="addressing" id="mail_cc" value="<%=[@last_mail.tos, @last_mail.ccs].flatten.collect{|x| x.person.email}.join(',') if @last_mail and @reply_all-%>"/>
+    </dd>
+    <dt><label for="">Bcc:</label></dt>
+    <dd><input name="mails[bccs]" type="text" class="addressing" id="mail_bcc"/></dd>
+    <dt><label for="">Subject:</label></dt>
+    <dd><input name="mails[subject]" type="text" class="addressing" id="mail_subject" value="<%=@last_mail.subject if @last_mail%>"/></dd>
+    <dt>Attach:</dt>
+    <dd><input type="file"/></dd>
+    </dl>
+  <textarea name="mails[body]" style="height: 290px;"><%="\n\n\n> "+@last_mail.find_raw.body.gsub(/\n/,"\n> ")%></textarea>
+  <input type="submit" id="send_mail" value="Send now"/>
+<%end%>

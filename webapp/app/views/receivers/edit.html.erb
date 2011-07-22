@@ -1,0 +1,20 @@
+<h1>Editing receiver</h1>
+
+<% form_for(@receiver) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :mail_id %><br />
+    <%= f.text_field :mail_id %>
+  </p>
+  <p>
+    <%= f.label :receiver_type_id %><br />
+    <%= f.text_field :receiver_type_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @receiver %> |
+<%= link_to 'Back', receivers_path %>

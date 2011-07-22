@@ -1,0 +1,31 @@
+<fieldset>
+  <legend>Your name</legend>
+  <dl>
+    <%client_form.fields_for :people do |person_form| -%>
+    <dt><%= person_form.label :email %></dt>
+    <dd><%= person_form.text_field :email %></dd>
+    <dt><%= person_form.label :your_name %></dt>
+    <dd><%= person_form.text_field :name %></dd>
+    <%end-%>
+  </dl>
+</fieldset>
+<fieldset>
+  <legend>Account details</legend>
+  <dl>
+    <%client_form.fields_for :users do |user_form| -%>
+    <dt><%= user_form.label :username %></dt>
+    <dd><%= user_form.text_field :username %></dd>
+    <dt><%= user_form.label :password %></dt>
+    <dd><%= user_form.password_field :password1 %></dd>
+    <dt><%= user_form.label :verify %></dt>
+    <dd><%= user_form.password_field :password2 %></dd>
+    <%end-%>
+  </dl>
+</fieldset>
+<fieldset>
+  <legend>Your website address</legend>
+  <dl>
+    <dt><%= client_form.label "http://" %></dt>
+    <dd><%= client_form.text_field :subdomain %></dd>
+  </dl>
+</fieldset>

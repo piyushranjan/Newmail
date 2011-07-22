@@ -1,0 +1,21 @@
+<%content_for(:toolbar) do-%>
+<form action="#" method="get" class="search">
+  <input name="keyword_search" id="keyword_search" value="" autosave="name.newmail.com" results="10" placeholder="search all mail..." type="search">
+</form>
+<ul class="inline">
+  <li><a id="reply_button" class="cap_left">Reply</a></li>
+  <li><a id="reply_all_button">Reply all</a></li>
+  <li><a id="assign_button" class="cap_right">Assign</a></li>
+  <li><a id="refresh_button" class="cap_left">Get mail</a></li>
+  <li><a class="cap_right">New message</a></li>
+  <li><a id="delete_button" class="cap_left">Delete</a></li>
+  <li><a id="junk_button" class="cap_right">Junk</a></li>
+  <li><a id="close_button">Close thread</a></li>
+  <li><a class="cap_left cap_right">More actions</a></li>
+</ul>
+<%end-%>
+
+<%content_for(:list_container) do -%>
+<script>var mailbox_count = {};</script>
+<%#= render :partial => 'mailboxes/mail' %>
+<%end-%>

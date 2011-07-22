@@ -1,0 +1,17 @@
+#settings_header {	background: #bacde5;
+	height: 70px	}#settings_header ul {	padding-top: 1em	}
+#settings_header ul li {	display: inline;
+	padding: 1em;	}#settings_header ul li a {
+	color: #000;	padding: 0 1em;	text-decoration: none;	}
+form {
+	background: #fff;	}
+fieldset {	background: #fff;
+	border-bottom: 1px solid #f3f3f3;
+	margin-bottom: 2em;
+	padding: 1em;	}legend {
+	color: #666;
+	float: left;	font-size: 1.5em;
+	font-weight: bold;	}
+
+.field_group {	margin-left: 20em	}fieldset h2 {	font-size: 1.5em;
+	font-weight: normal	}fieldset h2, fieldset p {	margin-bottom: 1em	}fieldset p {	font-size: 1.3em	}fieldset p label {	vertical-align: -15%	}
